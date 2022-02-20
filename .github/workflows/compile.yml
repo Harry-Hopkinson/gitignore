@@ -1,0 +1,21 @@
+name: Compiler
+
+on:
+    push:
+        branches:
+            - main
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14, 15, 16]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Typescript Compiler
+              run: |
+                  npm install
+                  npm run compile
