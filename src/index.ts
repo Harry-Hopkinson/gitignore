@@ -6,23 +6,27 @@ const configFiles: any = {};
 const configFolderPath = path.resolve(__dirname, "config");
 
 async () => {
-	const files = await readdir(configFolderPath).catch(console.log);
+    const files = await readdir(configFolderPath).catch(console.log);
 
-	for (let i of files) {
-		const gitignoreName = i.split(".")[0];
-		configFiles[gitignoreName] = path.join(configFolderPath, i);
-	}
+    for (let i of files) {
+        const gitignoreName = i.split(".")[0];
+        configFiles[gitignoreName] = path.join(configFolderPath, i);
+    }
 
-	const { language } = await inquirer.prompt([
-		{
-			type: "list",
-			message:
-				"Which Language do you want to generate the .gitignore for?",
-			name: "language",
-			choices: Object.keys(configFiles),
-		},
-	]);
+    const { language } = await inquirer.prompt([
+        {
+            type: "list",
+            message:
+                "Which Language do you want to generate the .gitignore for?",
+            name: "language",
+            choices: Object.keys(configFiles),
+        },
+    ]);
 
-	let config = await readFile(configFiles[language].catch(console.log));
-    const folderPath = path.join(process.cwd())
+    let config = await readFile(configFiles[language].catch(console.log));
+    const folderPath = path.resolve(__dirname, "..", "..", "..", ".gitignore");
+    await writeFile(folderPath, config.toString()).catch((err: any) => {
+        console.log(err);
+        process.exit();
+    });
 };
