@@ -1,20 +1,29 @@
 {
-  "name": "gitignore",
-  "version": "1.0.0",
-  "description": "A NPM Module that creates a .gitignore based on your chosen selection.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Harry-Hopkinson/gitignore.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Harry-Hopkinson/gitignore/issues"
-  },
-  "homepage": "https://github.com/Harry-Hopkinson/gitignore#readme"
+	"name": "cli-gitignore",
+	"version": "1.0.0",
+	"description": "A NPM Module that creates a .gitignore based on your chosen selection.",
+	"main": "lib/index.js",
+	"bin": "lib/index.js",
+	"scripts": {
+		"compile": "tsc",
+		"watch": "tsc -w"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Harry-Hopkinson/gitignore.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Harry-Hopkinson/gitignore/issues"
+	},
+	"homepage": "https://github.com/Harry-Hopkinson/gitignore#readme",
+	"devDependencies": {
+		"@types/node": "^17.0.18"
+	},
+	"dependencies": {
+		"fs": "^0.0.1-security",
+		"inquirer": "^8.2.0"
+	}
 }
