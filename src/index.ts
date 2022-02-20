@@ -8,9 +8,11 @@ const configFolderPath = path.resolve(__dirname, "config");
 (async () => {
     const files = await readdir(configFolderPath).catch(console.log);
 
-    for (let i of Object.keys(files)) {
-        const gitignoreName = files[i];
-        configFiles[gitignoreName] = path.join(configFolderPath, i);
+    for (let i of files) {
+        const gitignoreFileName = i.split(".")[0];
+        configFiles[gitignoreFileName] = await readFile(
+            path.resolve(configFolderPath, i)
+        ).catch(console.log);
     }
 
     const { language } = await inquirer.prompt([
@@ -23,10 +25,9 @@ const configFolderPath = path.resolve(__dirname, "config");
         },
     ]);
 
-    let config = await readFile(configFiles[language].catch(console.log));
-    const folderPath = path.resolve(__dirname, "..", "..", "..", ".gitignore");
-    await writeFile(folderPath, config.toString()).catch((err: any) => {
-        console.log(err);
-        process.exit();
-    });
+    let config = await readFile(
+        path.resolve(configFolderPath, `${language}.gitignore`)
+    ).catch(console.log);
+    const folderPath = path.join(process.cwd(), ".gitignore");
+    await writeFile(folderPath, configFiles[language]).catch(console.log);
 })();
