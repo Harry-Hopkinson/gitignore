@@ -9,7 +9,7 @@ async () => {
 	const files = await readdir(configFolderPath).catch(console.log);
 
 	for (let i of files) {
-		const gitignoreName = i.split(".")[1];
+		const gitignoreName = i.split(".")[0];
 		configFiles[gitignoreName] = path.join(configFolderPath, i);
 	}
 
