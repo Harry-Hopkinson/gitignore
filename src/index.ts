@@ -22,4 +22,7 @@ async () => {
 			choices: Object.keys(configFiles),
 		},
 	]);
+
+	let config = await readFile(configFiles[language].catch(console.log));
+    const folderPath = path.join(process.cwd())
 };
