@@ -1,6 +1,6 @@
 {
 	"name": "cli-gitignore",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "A NPM Module that creates a .gitignore based on your chosen selection.",
 	"main": "index.js",
 	"bin": "index.js",
@@ -13,7 +13,12 @@
 		"type": "git",
 		"url": "git+https://github.com/Harry-Hopkinson/gitignore.git"
 	},
-	"keywords": [],
+	"keywords": [
+		"cli",
+		"command-line",
+		"generator",
+		"license"
+	],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
