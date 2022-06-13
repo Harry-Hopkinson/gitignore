@@ -1,6 +1,6 @@
 {
   "name": "cli-gitignore",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A NPM Module that creates a .gitignore based on your chosen selection.",
   "main": "src/index.js",
   "bin": "src/index.js",
