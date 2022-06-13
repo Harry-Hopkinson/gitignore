@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/inquirer@^8.2.0":
+"@types/inquirer@8.2.1":
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/@types/inquirer/-/inquirer-8.2.1.tgz#28a139be3105a1175e205537e8ac10830e38dbf4"
   integrity sha512-wKW3SKIUMmltbykg4I5JzCVzUhkuD9trD6efAmYgN2MrSntY0SMRQzEnD3mkyJ/rv9NLbTC7g3hKKE86YwEDLw==
@@ -10,7 +10,7 @@
     "@types/through" "*"
     rxjs "^7.2.0"
 
-"@types/node@*", "@types/node@^17.0.18":
+"@types/node@*", "@types/node@17.0.42":
   version "17.0.42"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.42.tgz#d7e8f22700efc94d125103075c074396b5f41f9b"
   integrity sha512-Q5BPGyGKcvQgAMbsr7qEGN/kIPN6zZecYYABeTDBizOsau+2NMdSVTar9UQw21A2+JyA2KRNDYaYrPB0Rpk2oQ==
