@@ -4,7 +4,7 @@ on: [push]
 jobs:
   publish:
     name: release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
